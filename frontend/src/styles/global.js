@@ -19,6 +19,7 @@ export default createGlobalStyle `
   }
 
   body {
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
