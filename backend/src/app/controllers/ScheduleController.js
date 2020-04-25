@@ -15,30 +15,27 @@ class ScheduleController {
     }
 
     const { date } = req.query;
+    const parseDate = parseISO(date);
 
-    const parsedDate = parseISO(date);
-
-    // 2020-04-04 00:00:00
-    // 2020-04-04 23:59:00
-    const appointmens = await Appointment.findAll({
+    const Appointments = await Appointment.findAll({
       where: {
         helper_id: req.userId,
         canceled_at: null,
         date: {
-          [Op.between]: [startOfDay(parsedDate), endOfDay(parsedDate)],
+          [Op.between]: [startOfDay(parseDate), endOfDay(parseDate)],
         },
-        include: [
-          {
-            model: User,
-            avatar: 'user',
-            attributes: ['name'],
-          },
-        ],
       },
+      include: [
+        {
+          model: User,
+          as: 'user',
+          attributes: ['name'],
+        },
+      ],
       order: literal('date DESC'),
     });
 
-    return res.json(appointmens);
+    return res.json(Appointments);
   }
 }
 
