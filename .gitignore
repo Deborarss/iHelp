@@ -4,3 +4,4 @@ backend/tmp/uploads/*.png
 backend/.env
 
 frontend/node_modules/
+.DS_Store
