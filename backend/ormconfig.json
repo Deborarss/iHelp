@@ -2,9 +2,9 @@
   "type": "postgres",
   "host": "localhost",
   "port": 5432,
-  "username": "",
-  "password": "",
-  "database": "",
+  "username": "postgres",
+  "password": "docker",
+  "database": "ihelp",
   "entities": ["./src/models/*.ts"],
   "migrations": ["./src/database/migrations/*.ts"],
   "cli": {
