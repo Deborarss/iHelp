@@ -19,7 +19,7 @@ export default createGlobalStyle`
 
   body {
     background: linear-gradient(-90deg, #7DDE92, #2EBFA5);
-    color: #ffff;
+    color: #fff;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
