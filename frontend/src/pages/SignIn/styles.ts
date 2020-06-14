@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.div`
@@ -13,15 +13,30 @@ export const Content = styled.div`
   text-align: center;
   width: 100%;
   max-width: 315px;
+`;
+
+const appearFromLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`;
+
+export const AnimationContainer = styled.div`
+  animation: ${appearFromLeft} 1s;
 
   img {
-    width: 140px;
+    width: 120px;
   }
 
   form {
     display: flex;
     flex-direction: column;
-    margin: 40px 0;
+    margin: 30px 0;
 
     h1 {
       margin-bottom: 24px;
